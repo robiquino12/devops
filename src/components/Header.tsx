@@ -5,7 +5,6 @@ import { Home, Menu, X } from 'lucide-react'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-
   return (
     <>
       <header className="p-4 flex items-center bg-gray-800 text-white shadow-lg">
