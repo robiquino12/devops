@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router'
 
 import { useState } from 'react'
-import { Home, Menu, X } from 'lucide-react'
+import { Home, Menu, WandSparkles, X } from 'lucide-react'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,7 +10,8 @@ export default function Header() {
       <header className="p-4 flex items-center bg-gray-800 text-white shadow-lg">
         <button
           onClick={() => setIsOpen(true)}
-          className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
+          className="p-2 hover:bg-gray-700 
+          bg-red-900/50 rounded-lg transition-colors"
           aria-label="Open menu"
         >
           <Menu size={24} />
@@ -53,7 +54,33 @@ export default function Header() {
             }}
           >
             <Home size={20} />
-            <span className="font-medium">Home</span>
+            <span className="font-medium">Navigator</span>
+          </Link>
+
+          <Link
+            to="/some"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
+            activeProps={{
+              className:
+                'flex items-center gap-3 p-3 rounded-lg bg-red-600 hover:bg-cyan-700 transition-colors mb-2',
+            }}
+          >
+            <WandSparkles size={20} />
+            <span className="font-medium">Some</span>
+          </Link>
+
+          <Link
+            to="/one"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
+            activeProps={{
+              className:
+                'flex items-center gap-3 p-3 rounded-lg bg-green-600 hover:bg-cyan-700 transition-colors mb-2',
+            }}
+          >
+            <WandSparkles size={20} />
+            <span className="font-medium">One</span>
           </Link>
 
           {/* Demo Links Start */}

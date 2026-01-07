@@ -8,15 +8,11 @@ export const Route = createFileRoute('/some/')({
 function RouteComponent() {
   const [count, setCount] = useState(0)
 
-  useEffect(() => {
-    setTimeout(() => {
-      setCount(count + 5)
-    }, count)
-  }, [count])
+ 
 
 
   return <>
-  <div>count: {count}</div>
+  <div className='max-lg:text-xl max-lg:text-red-500'>count: {count}</div>
   <div>
     <button onClick={()=> {
       setCount(count + 1)
